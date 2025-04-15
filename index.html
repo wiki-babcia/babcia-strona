@@ -4,29 +4,30 @@
 <head>
     <meta charset="UTF-8">
     <title>Sekret Babci Marioli</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
     <style>
         body {
-            background-color: #fff8f0;
-            font-family: 'Arial', sans-serif;
+            background-color: #e0f7fa;
+            font-family: 'Dancing Script', cursive;
             text-align: center;
             padding: 50px 20px;
             color: #3a2f1c;
         }
         h1 {
-            font-size: 40px;
+            font-size: 48px;
             margin-bottom: 20px;
         }
         p {
-            font-size: 22px;
+            font-size: 26px;
             line-height: 1.6;
             margin-bottom: 30px;
         }
         .button {
             display: inline-block;
-            background-color: #d35400;
+            background-color: #d6a84c;
             color: white;
             padding: 20px 35px;
-            font-size: 24px;
+            font-size: 26px;
             text-decoration: none;
             border-radius: 12px;
             margin-top: 20px;
@@ -34,24 +35,74 @@
         }
         .message {
             margin-top: 60px;
-            font-size: 20px;
+            font-size: 24px;
             max-width: 800px;
             margin-left: auto;
             margin-right: auto;
-            line-height: 1.7;
-            background-color: #fff3e0;
-            padding: 30px;
-            border-radius: 20px;
-            border: 2px dashed #d35400;
+            line-height: 1.8;
+            background-color: #ffffffc5;
+            padding: 40px;
+            border-radius: 25px;
+            border: 2px dashed #d6a84c;
         }
         img {
             margin-top: 40px;
             max-width: 300px;
         }
-    </style>
+    
+        /* Pulsujący przycisk */
+        .button {
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.08); }
+            100% { transform: scale(1); }
+        }
+        /* Gwiazdki błyszczące wokół tytułu */
+        .sparkles::after {
+            content: '✨✨';
+            font-size: 36px;
+            margin-left: 10px;
+            animation: sparkle 2s infinite alternate;
+            display: inline-block;
+        }
+        @keyframes sparkle {
+            0% { opacity: 0.3; transform: rotate(0deg); }
+            100% { opacity: 1; transform: rotate(15deg); }
+        }
+        /* Unoszące się serca */
+        .hearts {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            overflow: hidden;
+            z-index: 0;
+        }
+        .heart {
+            position: absolute;
+            bottom: -50px;
+            font-size: 30px;
+            animation: floatUp 8s linear infinite;
+            color: #ff6f91;
+        }
+        @keyframes floatUp {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-110vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+</style>
 </head>
 <body>
-    <h1>Babcia nigdy nie zdradza swoich tajnych przepisów...</h1>
+    <h1 class="sparkles">Babcia nigdy nie zdradza swoich tajnych przepisów...</h1>
     <p>...ale za to możesz potańczyć! 🎵</p>
     <a class="button" href="https://www.youtube.com/watch?v=fCZVL_8D048" target="_blank">▶️ ZATAŃCZ Z BABCIA</a>
 
@@ -69,5 +120,12 @@
     </div>
 
     <img src="pierog-superbohater.png" alt="Pieróg Superbohater">
+
+    <div class="hearts">
+        <div class="heart" style="left: 20%;">❤️</div>
+        <div class="heart" style="left: 40%;">💖</div>
+        <div class="heart" style="left: 60%;">💕</div>
+        <div class="heart" style="left: 80%;">💗</div>
+    </div>
 </body>
 </html>
